@@ -7,8 +7,6 @@ const Index = ({pokemon}) => {
         backgroundColor: '#000'
     };
 
-
-
     return (
         <div>
             <h1 style={myStyle}>See All The Pokemon!</h1>
