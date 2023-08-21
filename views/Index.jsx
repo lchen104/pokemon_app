@@ -4,20 +4,24 @@ const Index = ({pokemon}) => {
     
     const myStyle = {
         color: '#fff',
-        backgroundColor: '#000'
+        backgroundColor: '#000',
+        textAlign: 'center'
     };
 
     
     return (
         <div>
             <h1 style={myStyle}>See All The Pokemon!</h1>
+            <nav>
+                <a href="/pokemon/new">Create a New Pokemon</a>
+            </nav>                
             <ul>
             {
                 pokemon.map((poke, i) => (
                     <li key={i}>
                         {/* {poke.name}<br /> */}
                         {/* <img src={poke.img} alt={poke.name} /> */}
-                        <a href={`/pokemon/${i}`}> {poke.name[0].toUpperCase() + poke.name.slice(1)} </a> 
+                        <a href={`/pokemon/${i}`}> {poke.name[0].toUpperCase() + poke.name.slice(1)} </a> - {poke.readyToFight ? 'Ready to FIGHT!' : 'Cowards away...!'}
                     </li>
                 )) 
             }
