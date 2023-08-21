@@ -8,6 +8,7 @@ const Show = ({pokemon}) => {
         textAlign: 'center'
     };
 
+    
     return (
         <div>
             <h1 style={myStyle}>Gotta Catch 'Em All!</h1>
