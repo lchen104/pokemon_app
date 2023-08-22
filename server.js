@@ -30,7 +30,8 @@ app.use((req, res, next) => {
 // Near the top, around other app.use() calls
 app.use(express.urlencoded({extended:false}));
 
-
+// to add static background image
+app.use(express.static('images'));
 
 
 app.get('/', (req, res) => {
@@ -85,7 +86,8 @@ app.post('/pokemon', (req, res)=>{
 // Show Pokemon
 app.get('/pokemon/:id', (req, res) => {
     res.render('Show', {
-        pokemon: pokemon[req.params.id]
+        pokemon: pokemon[req.params.id],
+        pokedex: pokedex[req.params.id],
     })
 })
 

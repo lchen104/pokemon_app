@@ -15,6 +15,8 @@ const Index = ({pokemon}) => {
       display: 'block',
       textAlign: 'center',
       // border: '1px solid black'
+      backgroundImage: 'url("pokemon-bg.jpeg")',
+      height: '98vh',
     }
 
     const container = {
@@ -34,7 +36,8 @@ const Index = ({pokemon}) => {
       borderRadius: '10px',
       margin: '5px',
       padding: '5px',
-      display: 'inline-block'
+      display: 'inline-block',
+      backgroundColor: 'white'
     }
 
 
@@ -48,8 +51,13 @@ const Index = ({pokemon}) => {
     
     return (
         <div style={main}>
-            <h1 style={h1}>See All The Pokemon!</h1>
-
+            {/* <h1 style={h1}>See All The Pokemon!</h1> */}
+            <h1 style={h1}>You have {pokemon.length} { pokemon.length > 1 ? 'Pokemons' : 'Pokemon'}</h1>
+            <nav style={nav}>
+                <h2>
+                  <a href="/" alt="">Home</a> | <a href="/pokemon" alt="List Pokemon">List Pokemon</a> | <a href="/pokemon/new" alt="Add Pokemon">Create Pokemon</a>
+                </h2>
+            </nav>
             <div style={container}>
                 {
                     pokemon.map((poke, i) => (
@@ -61,11 +69,7 @@ const Index = ({pokemon}) => {
                     )) 
                 }
             </div>
-            <nav style={nav}>
-                <h2>
-                  <a href="/" alt="">Home</a> | <a href="/pokemon" alt="List Pokemon">List Pokemon</a> | <a href="/pokemon/new" alt="Add Pokemon">Create Pokemon</a>
-                </h2>
-            </nav>
+
         </div>
     )
 }

@@ -9,6 +9,7 @@ const Main = () => {
         height: '98vh',
         margin: '0px,',
         padding: '0px',
+        backgroundImage: 'url("pokemon-bg.jpeg")'
     }
 
     const content = {
