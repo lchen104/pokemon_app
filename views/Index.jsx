@@ -17,34 +17,34 @@ const Index = ({pokemon}) => {
       // border: '1px solid black'
     }
 
-      const container = {
-        display: 'flex',
-        // border: '1px solid black',
-        textAlign: 'center',
-        // width: '800px',
-        // overflow: 'auto',
-        flexWrap: 'wrap',
-      }
+    const container = {
+      display: 'flex',
+      // border: '1px solid black',
+      textAlign: 'center',
+      // width: '800px',
+      // overflow: 'auto',
+      flexWrap: 'wrap',
+    }
 
 
-      const card = {
-        width: '200px',
-        height: '250px',
-        border: '10px solid lightgrey',
-        borderRadius: '10px',
-        margin: '5px',
-        padding: '5px',
-        display: 'inline-block'
-      }
+    const card = {
+      width: '200px',
+      height: '250px',
+      border: '10px solid lightgrey',
+      borderRadius: '10px',
+      margin: '5px',
+      padding: '5px',
+      display: 'inline-block'
+    }
 
 
-      const img = {
-        width: '150px'
-      }
+    const img = {
+      width: '150px'
+    }
 
-      const nav = {
-        textAlign: 'center',
-      }
+    const nav = {
+      textAlign: 'center',
+    }
     
     return (
         <div style={main}>
@@ -62,8 +62,10 @@ const Index = ({pokemon}) => {
                 }
             </div>
             <nav style={nav}>
-                <h2><a href="/pokemon/new">Create a New Pokemon</a></h2>
-            </nav>  
+                <h2>
+                  <a href="/" alt="">Home</a> | <a href="/pokemon" alt="List Pokemon">List Pokemon</a> | <a href="/pokemon/new" alt="Add Pokemon">Create Pokemon</a>
+                </h2>
+            </nav>
         </div>
     )
 }

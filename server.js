@@ -1,9 +1,10 @@
 const express = require('express')
 const app = express()
-const PORT = 5002
+const PORT = 5001
 
 // Import pokemon
 const pokemon = require('./models/pokemon.js')
+const pokedex = require('./models/pokedex.js')
 
 // Setting up the view engine
 app.set('views', __dirname + '/views');
@@ -33,7 +34,8 @@ app.use(express.urlencoded({extended:false}));
 
 
 app.get('/', (req, res) => {
-    res.send('Welcome to the Pokemon App!')
+    // res.send('Welcome to the Pokemon App!')
+    res.render('Main')
 })
 
 // index page to list all pokemons
@@ -48,15 +50,20 @@ app.get('/pokemon', (req, res) => {
 
 // First, we'll need a route for displaying the page in our server.js file.
 // IMPORTANT: put this above your show route, so that the show route doesn't accidentally pick up a /fruits/new request.
-app.get('/pokemon/new', (req, res) => {
-    res.render('New');
-});
+// app.get('/pokemon/new', (req, res) => {
+//     res.render('New');
+// });
 
+app.get('/pokemon/new', (req, res) => {
+    res.render('New', {
+        pokedex: pokedex
+    });
+});
 
 // Since the form in the last step tells the browser to create a POST request to /fruits,
 // we'll need to set up a route handler for this kind of request
 app.post('/pokemon', (req, res)=>{
-
+    console.log(req.body.name)
     const newPokemon = {
         name: req.body.name,
         img: 'http://img.pokemondb.net/artwork/' + req.body.name.toLowerCase(),

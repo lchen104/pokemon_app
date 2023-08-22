@@ -1,6 +1,6 @@
 import React from 'react'
 
-const New = () => {
+const New = ({pokedex}) => {
 
   const IMG_URL = 'https://img.pokemondb.net/artwork/'
 
@@ -26,20 +26,38 @@ const New = () => {
     
   }
 
+  const nav = {
+    textAlign: 'center',
+  }
+
   return (
     <div style={myDiv}>
         <h1 style={myStyle}>New Pokemon page</h1>
         {/* NOTE: action will be the route, method will be the HTTP verb */}
         <form action="/pokemon" method="POST">
-          <label>Name</label>
-            <input style={myInput} type="text" name="name" /><br/>
-          <label>Image</label>
+          {/* <label>Name</label>
+            <input style={myInput} type="text" name="name" /><br/> */}
+            <label>Create a Pokemon</label><br />
+            <select style={myInput} name="name">
+              {
+                pokedex.map((poke, i) => (
+                  <>
+                    <option key={i} value={poke.slug}>{poke.name}</option>
+                  </>
+                ))
+              }
+            </select><br />
+
+          {/* <label>Image</label> */}
             {/* <input style={myInput} type="text" name="img" value={IMG_URL} /><br/> */}
-            Is Ready To Fight: <input type="checkbox" name="readyToFight" /><br/>
+            Ready To Fight: <input type="checkbox" name="readyToFight" /><br/>
             <input style={myInput} type="submit" name="" value="Create Pokemon"/>
         </form>
-
-        <a href='https://www.pokemon.com/us/pokedex' alt='pokedex' target='_blank'>Pokedex</a>
+        <nav style={nav}>
+            <h2>
+              <a href="/" alt="">Home</a> | <a href="/pokemon" alt="List Pokemon">List Pokemon</a> | <a href="/pokemon/new" alt="Add Pokemon">Create Pokemon</a> | <a href='https://www.pokemon.com/us/pokedex' alt='pokedex' target='_blank'>Pokedex</a>
+            </h2>
+        </nav>
     </div>
   )
 }
