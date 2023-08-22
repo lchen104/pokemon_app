@@ -56,12 +56,21 @@ app.get('/pokemon/new', (req, res) => {
 // Since the form in the last step tells the browser to create a POST request to /fruits,
 // we'll need to set up a route handler for this kind of request
 app.post('/pokemon', (req, res)=>{
+
+    const newPokemon = {
+        name: req.body.name,
+        img: 'http://img.pokemondb.net/artwork/' + req.body.name.toLowerCase(),
+        readyToFight: req.body.readyToFight
+    }
+
     if(req.body.readyToFight === 'on'){ //if checked, req.body.readyToFight is set to 'on'
         req.body.readyToFight = true; //do some data correction
     } else { //if not checked, req.body.readyToFight is undefined
         req.body.readyToFight = false; //do some data correction
     }
-    pokemon.push(req.body);
+
+    // pokemon.push(req.body);
+    pokemon.push(newPokemon)
     res.redirect('/pokemon'); //send the user back to /pokemon
 });
 

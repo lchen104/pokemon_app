@@ -3,19 +3,43 @@ import React from 'react'
 const Show = ({pokemon}) => {
     
     const myStyle = {
+        fontFamily: 'sans-serif',
         color: '#fff',
         backgroundColor: '#000',
-        textAlign: 'center'
-    };
+        textAlign: 'center',
+        padding: '10px'
+      };
+
+      const myDiv = {
+        // display: 'flex',
+        // border: '1px solid black',
+        textAlign: 'center',
+        backgroundColor: 'lightgrey',
+      }
+
+      const img = {
+        border: '10px solid hotpink',
+        margin: '10px',
+        borderRadius: '25px',
+        padding: '20px'
+      }
+
+      const nav = {
+        textAlign: 'center',
+      }
 
     return (
-        <div>
-            <h1 style={myStyle}>Gotta Catch 'Em All!</h1>
-                <h2>{pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}</h2>
-                <img src={pokemon.img + '.jpg'} alt={pokemon.name} /><br />
-                {pokemon.readyToFight ? 'Ready to FIGHT!' : 'Cowards away...!'}<br />
+        <>
+            <div style={myDiv}>
+                <h1 style={myStyle}>Gotta Catch 'Em All!</h1>
+                    <h2>{pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}</h2>
+                    <img style={img} src={pokemon.img + '.jpg'} alt={pokemon.name} />
+                    <h2>{pokemon.readyToFight ? 'Ready to FIGHT!' : 'Cowards away...!'}</h2>
+            </div>
+            <nav style={nav}>
                 <a href={`/pokemon`}> Go Back </a> 
-        </div>
+            </nav>
+        </>
     )
 }
 
