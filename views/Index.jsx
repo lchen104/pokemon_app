@@ -3,26 +3,36 @@ import React from 'react'
 const Index = ({pokemon}) => {
     
     const h1 = {
-        fontFamily: 'sans-serif',
-        color: '#fff',
-        backgroundColor: '#000',
-        textAlign: 'center',
-        // width: '800px',
-        padding: '10px'
-      };
+      fontFamily: 'sans-serif',
+      // border: '1px solid black',
+      // textAlign: 'center',
+      // backgroundColor: 'black',
+      color: 'white'
+    }
     
     const main = {
-      display: 'block',
+      border: '1px solid black',
       textAlign: 'center',
-      // border: '1px solid black'
-      backgroundImage: 'url("pokemon-bg.jpeg")',
+      width: '100%',
       height: '98vh',
+      margin: '0px,',
+      padding: '0px',
+      backgroundImage: 'url("../pokemon-bg.jpeg")'
+    }
+
+    const content = {
+      fontFamily: 'sans-serif',
+      border: '1px solid black',
+      textAlign: 'center',
+      backgroundColor: 'black',
+      color: 'white'
     }
 
     const container = {
       display: 'flex',
       // border: '1px solid black',
       textAlign: 'center',
+      justifyContent: 'center',
       // width: '800px',
       // overflow: 'auto',
       flexWrap: 'wrap',
@@ -37,7 +47,7 @@ const Index = ({pokemon}) => {
       margin: '5px',
       padding: '5px',
       display: 'inline-block',
-      backgroundColor: 'white'
+      backgroundColor: 'white',
     }
 
 
@@ -51,8 +61,11 @@ const Index = ({pokemon}) => {
     
     return (
         <div style={main}>
+          <div style={content}>
             {/* <h1 style={h1}>See All The Pokemon!</h1> */}
             <h1 style={h1}>You have {pokemon.length} { pokemon.length > 1 ? 'Pokemons' : 'Pokemon'}</h1>
+          </div>
+
             <nav style={nav}>
                 <h2>
                   <a href="/" alt="">Home</a> | <a href="/pokemon" alt="List Pokemon">List Pokemon</a> | <a href="/pokemon/new" alt="Add Pokemon">Create Pokemon</a>

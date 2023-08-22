@@ -30,7 +30,7 @@ const Main = () => {
 
     const nav = {
         textAlign: 'center',
-      }
+    }
 
     return(
         <div style={container}>

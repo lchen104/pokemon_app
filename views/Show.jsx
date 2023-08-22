@@ -77,17 +77,25 @@ const Show = ({pokemon, pokedex}) => {
                 </nav>
                 
                 <div style={card}>
-                <h2>{pokemon.readyToFight ? 'Ready to FIGHT!' : 'Cowards away...!'}</h2>
+                <h1>{pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}</h1>
+                <h2>{pokemon.readyToFight ? 'Ready to FIGHT!' : 'Cowards away...'}</h2>
                   <img style={img} src={pokemon.img + '.jpg'} alt={pokemon.name} /><br/>
-                    <span style={span}>Name:</span> {pokedex.name}<br/>
+                    <span style={span}>Name:</span> {pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}<br/>
                     <span style={span}>Number:</span> {pokedex.number}<br/>
                     <span style={span}>Weight:</span> {pokedex.weight}<br/>
                     <span style={span}>Height: </span> {pokedex.height}<br/>
 
                     <span style={span}>Abilities: </span> {pokedex.abilities.map((ability, i) => {
+                      {/* console.log(pokedex.abilities.length)
+                      console.log(ability.indexOf())
+                        if (ability + 1 === pokedex.abilities.length) {
+                          return (ability)
+                        } else {
+                          return (ability + ', ')
+                        } */}
                         return (ability + ', ')
                     })}<br/>
-                    <span style={span}>Weakness </span> {pokedex.weakness.map((weak, i) => {
+                    <span style={span}>Weakness: </span> {pokedex.weakness.map((weak, i) => {
                         return (weak + ', ')
                     })}<br/>
                     <span style={span}>Type: </span> {pokedex.type.map((kind, i) => {
