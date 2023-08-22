@@ -14,11 +14,11 @@ const Show = ({pokemon}) => {
         // display: 'flex',
         // border: '1px solid black',
         textAlign: 'center',
-        backgroundColor: 'lightgrey',
+        backgroundColor: 'white',
       }
 
       const img = {
-        border: '10px solid hotpink',
+        border: '25px solid hotpink',
         margin: '10px',
         borderRadius: '25px',
         padding: '20px'
@@ -37,7 +37,7 @@ const Show = ({pokemon}) => {
                     <h2>{pokemon.readyToFight ? 'Ready to FIGHT!' : 'Cowards away...!'}</h2>
             </div>
             <nav style={nav}>
-                <a href={`/pokemon`}> Go Back </a> 
+                <h2><a href={`/pokemon`}> Go Back </a></h2>
             </nav>
         </>
     )

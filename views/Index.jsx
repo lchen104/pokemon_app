@@ -7,17 +7,23 @@ const Index = ({pokemon}) => {
         color: '#fff',
         backgroundColor: '#000',
         textAlign: 'center',
+        // width: '800px',
         padding: '10px'
       };
     
-    
+    const main = {
+      display: 'block',
+      textAlign: 'center',
+      // border: '1px solid black'
+    }
+
       const container = {
-        // display: 'flex',
+        display: 'flex',
         // border: '1px solid black',
         textAlign: 'center',
-        width: '100%',
+        // width: '800px',
         // overflow: 'auto',
-        flexWrap: 'nowrap',
+        flexWrap: 'wrap',
       }
 
 
@@ -41,7 +47,7 @@ const Index = ({pokemon}) => {
       }
     
     return (
-        <>
+        <div style={main}>
             <h1 style={h1}>See All The Pokemon!</h1>
 
             <div style={container}>
@@ -56,9 +62,9 @@ const Index = ({pokemon}) => {
                 }
             </div>
             <nav style={nav}>
-                <a href="/pokemon/new">Create a New Pokemon</a>
+                <h2><a href="/pokemon/new">Create a New Pokemon</a></h2>
             </nav>  
-        </>
+        </div>
     )
 }
 
