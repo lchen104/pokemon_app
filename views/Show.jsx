@@ -6,7 +6,7 @@ const Show = ({pokemon, pokedex}) => {
     border: '1px solid black',
     textAlign: 'center',
     width: '100%',
-    height: '98vh',
+    height: '95vh',
     margin: '0px,',
     padding: '0px',
     backgroundImage: 'url("../pokemon-bg.jpeg")'
@@ -63,6 +63,15 @@ const Show = ({pokemon, pokedex}) => {
     border: '2px solid #141414'
   }
 
+  const h4 = {
+    fontFamily: 'sans-serif',
+    // border: '1px solid black',
+    // textAlign: 'center',
+    // backgroundColor: 'black',
+    color: 'black',
+    textAlign: 'center'
+  }
+
     return (
         <>
             <div style={container}>
@@ -109,6 +118,7 @@ const Show = ({pokemon, pokedex}) => {
                 
                 <h2 style={h2}><a href={`/pokemon`}> Go Back </a></h2>
             </div>
+            <h4 style={h4}>Copyright &copy; 2023. Pika Pika. All Rights Reserved.</h4>
         </>
     )
 }

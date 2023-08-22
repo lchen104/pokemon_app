@@ -8,46 +8,63 @@ const New = ({pokedex}) => {
     border: '1px solid black',
     textAlign: 'center',
     width: '100%',
-    height: '98vh',
+    height: '95vh',
     margin: '0px,',
     padding: '0px',
     backgroundImage: 'url("../pokemon-bg.jpeg")'
-}
+  }
 
-const content = {
-  fontFamily: 'sans-serif',
-  border: '1px solid black',
-  textAlign: 'center',
-  backgroundColor: 'black',
-  color: 'white'
-}
+  const content = {
+    fontFamily: 'sans-serif',
+    border: '1px solid black',
+    textAlign: 'center',
+    backgroundColor: 'black',
+    color: 'white'
+  }
 
-const h1 = {
-  fontFamily: 'sans-serif',
-  // border: '1px solid black',
-  // textAlign: 'center',
-  // backgroundColor: 'black',
-  color: 'white'
-}
+  const h1 = {
+    fontFamily: 'sans-serif',
+    // border: '1px solid black',
+    // textAlign: 'center',
+    // backgroundColor: 'black',
+    color: 'white'
+  }
 
-const nav = {
-  textAlign: 'center',
-}
+  const h4 = {
+    fontFamily: 'sans-serif',
+    // border: '1px solid black',
+    // textAlign: 'center',
+    // backgroundColor: 'black',
+    color: 'black',
+    textAlign: 'center'
+  }
 
-const myInput = {
-      margin: '5px',
-      width: '300px',
-      // border: '1px solid black',
-      padding: '5px'
-}
+  const nav = {
+    textAlign: 'center',
+  }
 
+  const myInput = {
+        margin: '5px',
+        width: '300px',
+        // border: '1px solid black',
+        padding: '5px'
+  }
+
+  const span = {
+    fontWeight: 'bold'
+  }
+
+  const label = {
+    fontSize: 'large'
+  }
 
   return (
+    <>
     <div style={container}>
       <div style={content}>
           <h1 style={h1}>New Pokemon page</h1>
       </div>
-      
+
         <nav style={nav}>
             <h2>
               <a href="/" alt="">Home</a> | <a href="/pokemon" alt="List Pokemon">List Pokemon</a> | <a href="/pokemon/new" alt="Add Pokemon">Create Pokemon</a>
@@ -58,7 +75,7 @@ const myInput = {
           <form action="/pokemon" method="POST">
             {/* <label>Name</label>
               <input style={myInput} type="text" name="name" /><br/> */}
-              <label>Create a NEW Pokemon</label><br />
+              <label style={label}>Create a <span style={span}>NEW</span> Pokemon (<span style={span}>{pokedex.length}</span> to choose from)</label><br />
               <select style={myInput} name="name">
                 {
                   pokedex.map((poke, i) => (
@@ -72,7 +89,10 @@ const myInput = {
               Ready To Fight: <input type="checkbox" name="readyToFight" /><br/>
               <input style={myInput} type="submit" name="" value="Create Pokemon"/>
           </form>
+          
     </div>
+    <h4 style={h4}>Copyright &copy; 2023. Pika Pika. All Rights Reserved.</h4>
+    </>
   )
 }
 

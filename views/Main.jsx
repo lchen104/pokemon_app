@@ -6,7 +6,7 @@ const Main = () => {
         border: '1px solid black',
         textAlign: 'center',
         width: '100%',
-        height: '98vh',
+        height: '95vh',
         margin: '0px,',
         padding: '0px',
         backgroundImage: 'url("pokemon-bg.jpeg")'
@@ -28,11 +28,21 @@ const Main = () => {
         color: 'white'
     }
 
+    const h4 = {
+        fontFamily: 'sans-serif',
+        // border: '1px solid black',
+        // textAlign: 'center',
+        // backgroundColor: 'black',
+        color: 'black',
+        textAlign: 'center'
+      }
+
     const nav = {
         textAlign: 'center',
     }
 
     return(
+        <>
         <div style={container}>
             <div style={content}>
                 <h1 style={h1}>Welcome to the Pokemon App</h1>
@@ -44,6 +54,8 @@ const Main = () => {
                 </h2>
             </nav>
         </div>
+        <h4 style={h4}>Copyright &copy; 2023. Pika Pika. All Rights Reserved.</h4>
+        </>
     )
 }
 
