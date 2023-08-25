@@ -65,16 +65,18 @@ app.get('/pokemon/new', (req, res) => {
 // we'll need to set up a route handler for this kind of request
 app.post('/pokemon', (req, res)=>{
     console.log(req.body.name)
-    const newPokemon = {
-        name: req.body.name,
-        img: 'http://img.pokemondb.net/artwork/' + req.body.name.toLowerCase(),
-        readyToFight: req.body.readyToFight
-    }
+
 
     if(req.body.readyToFight === 'on'){ //if checked, req.body.readyToFight is set to 'on'
         req.body.readyToFight = true; //do some data correction
     } else { //if not checked, req.body.readyToFight is undefined
         req.body.readyToFight = false; //do some data correction
+    }
+
+    const newPokemon = {
+        name: req.body.name,
+        img: 'http://img.pokemondb.net/artwork/' + req.body.name.toLowerCase(),
+        readyToFight: req.body.readyToFight
     }
 
     // pokemon.push(req.body);
