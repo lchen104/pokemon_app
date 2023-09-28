@@ -1,6 +1,9 @@
 # Introduction
 Pokemon App. You can list, create and show individual pokemon cards.
 
+## Project Description
+Make a Pokemon app that displays data inside server-side rendered views.
+
 # Main Page
 ![Main Page](images/mainpage.png)
 
@@ -12,3 +15,9 @@ Pokemon App. You can list, create and show individual pokemon cards.
 
 # Show Pokemon
 ![Show Pokemon Details](images/showpokemon.png)
+
+# Technologies Used
+- Javascript
+- Express
+- Node
+- JSX
