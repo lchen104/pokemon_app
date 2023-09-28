@@ -48,6 +48,7 @@ const Index = ({pokemon}) => {
       padding: '5px',
       display: 'inline-block',
       backgroundColor: 'white',
+      boxShadow: '5px 5px 30px #141414'
     }
 
 
