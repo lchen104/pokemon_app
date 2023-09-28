@@ -21,3 +21,6 @@ Make a Pokemon app that displays data inside server-side rendered views.
 - Express
 - Node
 - JSX
+
+# Future Enhancements
+Pokemon App in Full CRUD [https://github.com/lchen104/pokemon_app_mongodb]
